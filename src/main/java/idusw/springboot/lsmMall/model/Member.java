@@ -1,4 +1,4 @@
-package idusw.springboot.lshmall.model;
+package idusw.springboot.lsmMall.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

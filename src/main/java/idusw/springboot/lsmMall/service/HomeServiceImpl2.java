@@ -1,4 +1,4 @@
-package idusw.springboot.lshmall.service;
+package idusw.springboot.lsmMall.service;
 
 
 import org.springframework.stereotype.Service;

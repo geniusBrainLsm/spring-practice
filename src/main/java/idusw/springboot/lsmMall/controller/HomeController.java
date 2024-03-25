@@ -1,7 +1,7 @@
-package idusw.springboot.lshmall.controller;
+package idusw.springboot.lsmMall.controller;
 
-import idusw.springboot.lshmall.model.Member;
-import idusw.springboot.lshmall.service.HomeService;
+import idusw.springboot.lsmMall.model.Member;
+import idusw.springboot.lsmMall.service.HomeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

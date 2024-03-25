@@ -1,4 +1,4 @@
-package idusw.springboot.lshmall;
+package idusw.springboot.lsmMall;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

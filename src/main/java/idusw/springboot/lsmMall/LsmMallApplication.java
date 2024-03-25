@@ -1,9 +1,7 @@
-package idusw.springboot.lshmall;
+package idusw.springboot.lsmMall;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Configuration;
 
 @SpringBootApplication // Spring - Annotation : java, lombok, spring
 //@Configuration
