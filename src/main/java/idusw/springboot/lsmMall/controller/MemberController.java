@@ -18,8 +18,8 @@ public class MemberController {
     }
 
     @GetMapping("members/login")
-    public String getLogin(){
-
+    public String getLogin(Model model){
+        model.addAttribute("member", new Member());
         return "./main/login";
     }
 
@@ -27,18 +27,18 @@ public class MemberController {
     public String postLogin(@ModelAttribute("member") Member member, Model model){
         String id = member.getId();
         String pw = member.getPw();
+
         Member m = new Member();
+        String msg="";
         if(id.equals("induk") && pw.equals("comso")){
-            m.setId("success");
-            model.addAttribute("member", m);
+            msg="login success";
         }
         else
         {
-            m.setId("fail");
-            model.addAttribute("member", m);
+            msg="login fail";
         }
-
-        return "./main/index";
+        model.addAttribute("message", msg);
+        return "./main/400";
     }
 
 }

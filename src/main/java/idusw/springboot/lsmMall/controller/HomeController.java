@@ -17,11 +17,16 @@ public class HomeController {
 
     private final HomeService homeService;
 
-    @GetMapping(value = {"/", "/1"})
+    @GetMapping(value = { "/",""})
+    public String goLogin(){
+        return "redirect:/members/login";
+    }
+
+    @GetMapping(value = { "/1"})
     public String getRoot(HttpServletRequest request, Model model){
         homeService.sayHello();
-        model.addAttribute("greeting", request.getParameter("name"));
-        return "main/index"; // view
+        model.addAttribute("greeting",request.getParameter("name"));
+        return "main/index";
     }
 
 
