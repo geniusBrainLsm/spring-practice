@@ -18,9 +18,10 @@ public class HomeController {
     private final HomeService homeService;
 
     @GetMapping(value = { "/",""})
-    public String goLogin(){
-        return "redirect:/members/login";
-    }
+//    public String goLogin(){
+//        return "redirect:/members/login";
+//    }
+    public String goMain() {return "main/index2";}
 
     @GetMapping(value = { "/1"})
     public String getRoot(HttpServletRequest request, Model model){
