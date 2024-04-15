@@ -176,18 +176,19 @@
 					</div>
 				</div>
 				<div class="user-notification" th:if = "${session.id == null}">
-					<div class="dropdown">
 						<a
 							class="no-arrow"
 							href="./members/login"
-							role="button"
-							data-toggle="dropdown"
-						>
+							role="button">
 							Login
-							<span class="badge notification-active"></span>
 						</a>
+					<a
+							class="no-arrow"
+							href="./members/register"
+							role="button">
+						    Register
+					</a>
 
-					</div>
 				</div>
 				<div class="user-info-dropdown" th:unless="${session.id == null}">
 					<div class="dropdown">

@@ -24,6 +24,11 @@ public class MemberController {
         return "./main/login";
     }
 
+    @GetMapping("members/register")
+    public String getRegister(){
+        return "./main/register";
+    }
+
     @PostMapping("members/login")
     public String postLogin(@ModelAttribute("member") Member member, Model model, HttpSession session){
         String id = member.getId();
