@@ -12,4 +12,6 @@ public class MyController {
     public String printHelloWorld(HttpServletRequest request){
         return "<h1>" + request.getParameter("fav") + "</h1>";
     }
+
+
 }
