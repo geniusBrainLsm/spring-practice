@@ -1,14 +1,9 @@
 package idusw.springboot.lsmMall.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@Data
+@Builder
 public class Member { // DTO
     private Long idx;
     private String id;
