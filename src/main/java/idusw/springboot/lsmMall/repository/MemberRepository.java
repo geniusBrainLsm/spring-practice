@@ -6,11 +6,13 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.data.repository.query.Param;
 
+import java.util.Optional;
+
 public interface MemberRepository extends JpaRepository<MemberEntity, Long>
        // JpaRepository<MemberEntity, Long> ,
 //        QuerydslPredicateExecutor<MemberEntity> {
 //    @Query("select m from MemberEntity  m where m.email = :email and m.pw = :pw")
 //    Object getMemberEntityById(@Param("id") String id, @Param("pw") String pw);
 {
-
+    Optional<MemberEntity> findByEmail(String email);
 }

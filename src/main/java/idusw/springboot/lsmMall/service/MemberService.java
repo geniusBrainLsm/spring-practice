@@ -1,20 +1,20 @@
 package idusw.springboot.lsmMall.service;
 
 import idusw.springboot.lsmMall.entity.MemberEntity;
-import idusw.springboot.lsmMall.model.Member;
+import idusw.springboot.lsmMall.model.MemberDTO;
 
 import java.util.List;
 
 public interface MemberService {
-    void create(Member member);
-    Member readById(Long idx);
-    List<Member> readAll();
-    void update(Member member);
-    void delete(Member member);
+    MemberDTO create(MemberDTO memberDTO);
+    MemberDTO readById(Long idx);
+    List<MemberDTO> readAll();
+    void update(MemberDTO member);
+    void delete(MemberDTO member);
 
-    Member loginById(Member member);
+    MemberDTO loginById(MemberDTO member);
 
-    default MemberEntity toEntity(Member member){
+    default MemberEntity toEntity(MemberDTO member){
         MemberEntity entity = MemberEntity.builder()
                 .idx(member.getIdx())
                 .id(member.getId())
@@ -24,8 +24,8 @@ public interface MemberService {
         return entity;
     }
 
-    default Member fromEntity(MemberEntity entity){
-        Member member = Member.builder()
+    default MemberDTO fromEntity(MemberEntity entity){
+        MemberDTO member = MemberDTO.builder()
                 .idx(entity.getIdx())
                 .id(entity.getId())
                 .pw(entity.getPw())

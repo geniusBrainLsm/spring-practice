@@ -108,7 +108,7 @@
 							<div class="login-title">
 								<h2 class="text-center text-primary">Login To DeskApp</h2>
 							</div>
-							<form th:action="@{../members/login}" th.object="${member}" method="post">
+							<form th:action="@{../members/login}" th:object="${member}" method="post">
 								<div class="select-role">
 									<div class="btn-group btn-group-toggle" data-toggle="buttons">
 										<label class="btn active">
@@ -139,10 +139,10 @@
 								</div>
 								<div class="input-group custom">
 									<input
-										name="id"
+										name="email"
 										type="text"
 										class="form-control form-control-lg"
-										placeholder="Username"
+										placeholder="email"
 									/>
 									<div class="input-group-append custom">
 										<span class="input-group-text"
@@ -214,7 +214,7 @@
 			</div>
 		</div>
 		<!-- welcome modal start -->
-		<div class="welcome-modal">
+		<div>
 			<button class="welcome-modal-close">
 				<i class="bi bi-x-lg"></i>
 			</button>

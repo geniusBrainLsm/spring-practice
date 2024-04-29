@@ -1,6 +1,6 @@
 package idusw.springboot.lsmMall.controller;
 
-import idusw.springboot.lsmMall.model.Member;
+import idusw.springboot.lsmMall.model.MemberDTO;
 import idusw.springboot.lsmMall.service.HomeService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -33,7 +33,7 @@ public class HomeController {
 
     @GetMapping("/2")
     public String getIndex2(@RequestParam Map<String, String> param , Model model){
-        Member member = Member.builder().build();
+        MemberDTO member = MemberDTO.builder().build();
         member.setId("lsm");
         member.setName(param.get("name"));
         member.setEmail("asd@asd.asd");

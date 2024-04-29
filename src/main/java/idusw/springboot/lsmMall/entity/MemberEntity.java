@@ -15,13 +15,13 @@ public class MemberEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idx;
-    @Column(length = 20,nullable = false)
+    @Column(length = 20,nullable = true)
     private String id;
-    @Column(length = 20,nullable = false)
+    @Column(length = 20,nullable = true)
     private String pw;
     @Column(length = 20)
     private String name;
-    @Column(length = 20,nullable = false)
+    @Column(length = 50,nullable = false)
     private String email;
 
 
