@@ -18,8 +18,9 @@ import java.util.Optional;
 public class MemberController {
     private final MemberServiceImpl memberService;
     private final MemberRepository memberRepository;
+
     @GetMapping("members/{id}")
-    public String getById(@PathVariable String id, Model model){
+    public String getById(@PathVariable String id, Model model) {
         //Member member = new Member();
         MemberDTO member = MemberDTO.builder().build();
         member.setId(id);
@@ -28,7 +29,7 @@ public class MemberController {
     }
 
     @GetMapping("members/login")
-    public String getLogin(Model model){
+    public String getLogin(Model model) {
         model.addAttribute("member", MemberDTO.builder().build());
         return "./main/login";
     }
@@ -52,8 +53,9 @@ public class MemberController {
 
         return "./main/400";
     }
+
     @GetMapping("/members/register")
-    public String getRegister(){
+    public String getRegister() {
         return "./main/register";
     }
 
@@ -62,22 +64,42 @@ public class MemberController {
         Optional<MemberEntity> optionalMember = memberRepository.findByEmail(memberDTO.getEmail());
         String msg;
 
-        if(optionalMember.isPresent()){
+        if (optionalMember.isPresent()) {
             msg = "이미 존재하는 회원";
             model.addAttribute("message", msg);
             return "./main/400";
-        }else{
+        } else {
             memberService.create(memberDTO);
             msg = "회원가입 성공";
             model.addAttribute("message", msg);
             return "./main/400";
         }
     }
+
+
+    @GetMapping("/members/{idx}")
+    public String getMember(@PathVariable("idx") Long idx, Model model) {
+        MemberDTO result = memberService.readById(idx);
+        model.addAttribute("member", result);
+        return "./main/detail";
+
+    }
+
+
+    @GetMapping("/members/update")
+    public String getUpdate() {
+        return "./main/update";
+    }
+
+
+    @PutMapping("/members/update")
+    public String putUpdate(@ModelAttribute MemberDTO memberDTO, Model model) {
+        return "./main/400";
+    }
     @GetMapping("/members/logout")
-    public String getLogout(HttpSession session){
+    public String getLogout (HttpSession session){
         //session.setAttribute("id", ""); //or invalidate();
         session.invalidate();
         return "redirect:/";
     }
-
 }

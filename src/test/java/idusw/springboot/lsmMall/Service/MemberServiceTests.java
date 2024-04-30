@@ -33,4 +33,13 @@ public class MemberServiceTests {
             System.out.println("success");
         }
     }
+
+    @Test
+    public void readMemberByIdx() {
+        Optional<MemberEntity> optionalMember = memberRepository.findById(1L);
+
+        if (optionalMember.isPresent()) {
+            System.out.println("success");
+        }
+    }
 }
