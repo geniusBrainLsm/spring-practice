@@ -68,7 +68,9 @@ public class MemberController {
             return "./main/400";
         }else{
             memberService.create(memberDTO);
-            return "./main/login";
+            msg = "회원가입 성공";
+            model.addAttribute("message", msg);
+            return "./main/400";
         }
     }
     @GetMapping("/members/logout")

@@ -7,10 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 //@Configuration
 //@EnableAutoConfiguration
 public class LsmMallApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(LsmMallApplication.class, args);
     }
-
-
 }

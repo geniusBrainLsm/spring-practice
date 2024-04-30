@@ -9,9 +9,8 @@ public interface MemberService {
     MemberDTO create(MemberDTO memberDTO);
     MemberDTO readById(Long idx);
     List<MemberDTO> readAll();
-    void update(MemberDTO member);
-    void delete(MemberDTO member);
-
+    MemberDTO update(MemberDTO member);
+    void delete(Long idx);
     MemberDTO loginById(MemberDTO member);
 
     default MemberEntity toEntity(MemberDTO member){
