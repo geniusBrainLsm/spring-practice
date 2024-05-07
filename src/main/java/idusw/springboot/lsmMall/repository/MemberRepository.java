@@ -15,4 +15,6 @@ public interface MemberRepository extends JpaRepository<MemberEntity, Long>
 //    Object getMemberEntityById(@Param("id") String id, @Param("pw") String pw);
 {
     Optional<MemberEntity> findByEmail(String email);
+    Optional<MemberEntity> findById(String id);
+
 }

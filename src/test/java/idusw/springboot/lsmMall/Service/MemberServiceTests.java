@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.TestComponent;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @SpringBootTest
 public class MemberServiceTests {
@@ -41,5 +43,11 @@ public class MemberServiceTests {
         if (optionalMember.isPresent()) {
             System.out.println("success");
         }
+    }
+
+    @Test
+    public void readAll() {
+        List<MemberEntity> memberList = memberRepository.findAll();
+
     }
 }

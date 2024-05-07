@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -83,6 +84,19 @@ public class MemberController {
         model.addAttribute("member", result);
         return "./main/detail";
 
+    }
+
+    @GetMapping("/members")
+    public String getMembers(Model model){
+        List<MemberDTO> members = memberService.readAll();
+        if(members != null){
+            model.addAttribute("memberlist", members);
+        }
+        else {
+            model.addAttribute("message", "회원목록 조회 실패");
+            return "./main/400";
+        }
+        return "./members/list";
     }
 
 

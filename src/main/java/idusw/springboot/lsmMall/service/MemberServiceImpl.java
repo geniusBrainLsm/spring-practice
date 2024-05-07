@@ -55,7 +55,7 @@ public class MemberServiceImpl implements MemberService{
         List<MemberEntity> memberList = memberRepository.findAll();
 
         return memberList.stream()
-                .map(memberEntity -> fromEntity(memberEntity))
+                .map(this::fromEntity)
                 .collect(Collectors.toList());
     }
 
@@ -91,7 +91,8 @@ public class MemberServiceImpl implements MemberService{
 
     @Override
     public MemberDTO loginById(MemberDTO memberDTO) {
-        Optional<MemberEntity> optionalMember = memberRepository.findByEmail(memberDTO.getEmail());
+        //Optional<MemberEntity> optionalMember = memberRepository.findByEmail(memberDTO.getEmail());
+        Optional<MemberEntity> optionalMember = memberRepository.findById(memberDTO.getId());
 
         if (optionalMember.isPresent()) {
             MemberEntity memberEntity = optionalMember.get();
