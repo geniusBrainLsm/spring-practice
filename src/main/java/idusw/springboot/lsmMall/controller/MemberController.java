@@ -44,6 +44,8 @@ public class MemberController {
         String msg;
         if (authenticatedMember != null) {
             session.setAttribute("id", authenticatedMember.getName());
+            session.setAttribute("id", authenticatedMember.getIdx());
+
             msg = "Login successful";
         } else {
             msg = "Login failed";
@@ -82,7 +84,7 @@ public class MemberController {
     public String getMember(@PathVariable("idx") Long idx, Model model) {
         MemberDTO result = memberService.readById(idx);
         model.addAttribute("member", result);
-        return "./main/detail";
+        return "./main/profile";
 
     }
 

@@ -3,6 +3,7 @@ package idusw.springboot.lsmMall.Service;
 import idusw.springboot.lsmMall.entity.MemberEntity;
 import idusw.springboot.lsmMall.model.MemberDTO;
 import idusw.springboot.lsmMall.repository.MemberRepository;
+import idusw.springboot.lsmMall.service.MemberService;
 import jakarta.persistence.Table;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,8 @@ import java.util.stream.Collectors;
 public class MemberServiceTests {
     @Autowired
     MemberRepository memberRepository;
+    @Autowired
+    MemberService memberService;
     @Test
     public void registerMember() {
         MemberEntity memberEntity = MemberEntity.builder()
@@ -36,13 +39,20 @@ public class MemberServiceTests {
         }
     }
 
+
     @Test
     public void readMemberByIdx() {
-        Optional<MemberEntity> optionalMember = memberRepository.findById(1L);
-
-        if (optionalMember.isPresent()) {
-            System.out.println("success");
+        MemberDTO member = memberService.readById(2L);
+        if(member != null){
+            System.out.println("read success" + member.toString());
+        } else{
+            System.out.println("read fail");
         }
+//        Optional<MemberEntity> optionalMember = memberRepository.findById(1L);
+//
+//        if (optionalMember.isPresent()) {
+//            System.out.println("success");
+//        }
     }
 
     @Test
