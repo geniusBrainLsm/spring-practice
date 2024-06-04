@@ -28,5 +28,5 @@ public class MemberEntity {
 
     @OneToMany(mappedBy = "writer")
     private List<BlogEntity> blogEntity;
-
+ //todo: repository만들기.
 }
