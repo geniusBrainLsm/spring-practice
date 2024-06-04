@@ -3,6 +3,8 @@ package idusw.springboot.lsmMall.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Data
 @ToString
 @NoArgsConstructor
@@ -24,5 +26,7 @@ public class MemberEntity {
     @Column(length = 50,nullable = false)
     private String email;
 
+    @OneToMany(mappedBy = "writer")
+    private List<BlogEntity> blogEntity;
 
 }
